@@ -1,3 +1,3 @@
-# OBI
+# Programming Challenge
 
-Resoluções das questões propostas pela Olimpíada Brasileira de Informática (OBI).
+Resoluções de questões propostas em programação competitiva.
