@@ -1,0 +1,26 @@
+6 *attr0 !attr1 ?attr2 attr3 ?attr4 !attr5
+INSERT 4 *attr0 834544 ?attr4 983545 ?attr2 vLiSqo5kcZ attr3 ZVOOLOhVNU
+INSERT 3 *attr0 661624 ?attr4 617801 attr3 ki0dv1iSaE
+INSERT 3 *attr0 758277 !attr1 979991 attr3 pInLlKy6RX
+INSERT 4 *attr0 175617 ?attr4 256066 attr3 3yGgMCkply !attr5 960814
+INSERT 4 *attr0 245800 ?attr2 JKYiniispW attr3 RNxGDen3Xy !attr1 69251
+INSERT 5 *attr0 872258 ?attr4 992594 ?attr2 eTRvoCaafW attr3 ki0dv1iSaE !attr1 784868
+SELECT 4 *attr0 !attr1 attr3 ?attr4 WHERE *attr0 872258
+SELECT 4 !attr1 ?attr4 ?attr2 *attr0 WHERE ?attr2 vLiSqo5kcZ
+SELECT 5 *attr0 ?attr2 ?attr4 attr3 !attr1 WHERE ?attr2 vLiSqo5kcZ
+SELECT 4 attr3 !attr1 *attr0 ?attr2 WHERE ?attr2 eTRvoCaafW
+INSERT 5 *attr0 180891 ?attr4 12554 !attr5 952404 ?attr2 3YBXP3DftL attr3 fiaSFtesjS
+INSERT 6 *attr0 235062 !attr1 761688 ?attr4 423876 attr3 ki0dv1iSaE ?attr2 kjZKdOGAiq !attr5 96418
+DELETE !attr1 69251
+SELECT 1 attr3 WHERE ?attr4 12554
+DELETE !attr1 784868
+INSERT 2 *attr0 658902 attr3 ki0dv1iSaE
+INSERT 2 *attr0 641455 ?attr4 992594
+SELECT 3 attr3 *attr0 !attr1 WHERE ?attr2 3YBXP3DftL
+DELETE !attr1 979991
+SELECT 3 !attr1 attr3 ?attr2 WHERE *attr0 175617
+INSERT 6 *attr0 549550 ?attr2 kjZKdOGAiq !attr5 886025 !attr1 755784 ?attr4 992594 attr3 ki0dv1iSaE
+SELECT 3 ?attr2 ?attr4 *attr0 WHERE ?attr4 992594
+SELECT 3 *attr0 ?attr4 !attr1 WHERE ?attr4 423876
+SELECT 4 attr3 *attr0 ?attr2 ?attr4 WHERE ?attr4 992594
+DELETE !attr5 952404

@@ -1,0 +1,17 @@
+4 *problemId !problemName ?timeLimit acceptedCount
+
+INSERT 4 *problemId p1 !problemName Somar ?timeLimit 1 acceptedCount 9876
+
+INSERT 4 *problemId p2 !problemName Subtrair ?timeLimit 1 acceptedCount 7654
+
+INSERT 4 *problemId p3 !problemName Multiplicar ?timeLimit 32 acceptedCount 5432
+
+SELECT 2 *problemId acceptedCount WHERE ?timeLimit 32
+
+INSERT 4 *problemId p4 !problemName Dividir ?timeLimit 32 acceptedCount 3210
+
+SELECT 2 *problemId acceptedCount WHERE ?timeLimit 32
+
+DELETE !problemName Multiplicar
+
+SELECT 2 *problemId acceptedCount WHERE ?timeLimit 32
