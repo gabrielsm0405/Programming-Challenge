@@ -68,8 +68,5 @@ int main(){
 		cout<<endl;
 	}
 
-	getchar();
-	getchar();
-
 	return 0;
 }

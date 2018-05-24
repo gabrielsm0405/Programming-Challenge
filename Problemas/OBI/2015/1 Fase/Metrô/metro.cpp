@@ -5,12 +5,16 @@ using namespace std;
 struct ESTACAO{
 	int qtdLig;
 
+	int val;
+
 	ESTACAO **ligacoes;
 
 	bool visitada;
 }* estacoes;
 
-void getLigacoes(int);
+ESTACAO *estCentral;
+
+ESTACAO *getLigacoes(int);
 
 int findCircle(ESTACAO *);
 
@@ -20,7 +24,7 @@ int main(){
 
 	estacoes=(ESTACAO *)calloc(n, sizeof(ESTACAO));
 
-	getLigacoes(m);
+	estCentral=getLigacoes(m);
 
 	int respMax=0;
 
@@ -39,9 +43,16 @@ int main(){
 }
 
 int findCircle(ESTACAO *curEst){
-	if(curEst->qtdLig<2) return -1;
+	//cout<<"Estacao="<<curEst->val<<endl;
 
-	if(curEst->visitada) return 0;
+	//getchar();
+	//getchar();
+
+	if(curEst==estCentral) return -1000000;
+
+	if(curEst->qtdLig<2) return -1000000;
+
+	if(curEst->visitada) return -1000000;
 
 	int circleMax=0;
 
@@ -54,12 +65,20 @@ int findCircle(ESTACAO *curEst){
 		if(circle>circleMax) circleMax=circle;
 	}
 
+	//cout<<"Est"<<curEst->val<<" Dist="<<circleMax<<endl;
+
+	//getchar();
+	//getchar();
+
 	curEst->visitada=false;
 
 	return circleMax;
 }
 
-void getLigacoes(int m){
+ESTACAO *getLigacoes(int m){
+	int maxQtdLig=0;
+	ESTACAO *curEstCentral;
+
 	for(int c1=0; c1<m; c1++){
 		int val1, val2;
 		cin>>val1>>val2;
@@ -76,5 +95,22 @@ void getLigacoes(int m){
 
 		estacoes[val1-1].qtdLig++;
 		estacoes[val2-1].qtdLig++;
+
+		estacoes[val1-1].val=val1;
+		estacoes[val2-1].val=val2;
+
+		if(estacoes[val1-1].qtdLig>maxQtdLig){
+			maxQtdLig=estacoes[val1-1].qtdLig;
+
+			curEstCentral=&estacoes[val1-1];
+		}
+
+		if(estacoes[val2-1].qtdLig>maxQtdLig){
+			maxQtdLig=estacoes[val2-1].qtdLig;
+
+			curEstCentral=&estacoes[val2-1];
+		}
 	}
+
+	return curEstCentral;
 }

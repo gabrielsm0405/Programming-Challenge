@@ -22,8 +22,8 @@ int main(){
 
 	for(int c1=0; c1<N;){
 		for(int c2=N-1; c2>=c1; c2--){
-			if(verPali(c1, c2)==1)
-{				resp++;
+			if(verPali(c1, c2)==1){
+				resp++;
 
 				c1=c2+1;
 
