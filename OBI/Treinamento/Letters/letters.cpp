@@ -2,32 +2,62 @@
 
 using namespace std;
 
-typedef struct{
+class Dorm{
 	long long valOri, valAlt;
-}DORM;
+
+public:
+	Dorm(long long _valOri, long long _valAlt){
+		valOri=_valOri;
+		valAlt=_valAlt;
+	}
+
+	Dorm(){}
+
+	long long getValOri() const { return valOri; }
+
+	long long getValAlt() const { return valAlt; }
+};
+
+class MyComparator{
+public:
+	int operator() (const Dorm& p1, const Dorm& p2){
+		return p1.getValAlt() > p2.getValAlt();
+	}
+};
 
 int main(){
 	int n, m;
 	cin>>n>>m;
 
-	DORM dorm[1000000], regis=0;
+	priority_queue <Dorm, vector<Dorm>, MyComparator > min_heap;
+
+	long long regis=0;
 	for(int c1=0; c1<n; c1++){
-		cin>>dorm[c1].valOri;
+		long long aux;
+		cin>>aux;
 
-		dorm[c1].valAlt=dorm[c1].valOri;
+		min_heap.push(Dorm(aux, aux+regis));
 
-		dorm[c1].valAlt+=regis;
-
-		regis+=dorm[c1].valAlt;
+		regis=aux+regis;
 	}
 
-	//Tem que colocar tudo em uma minheap a partir de valAlt e qaundo for ler os números nas cartas
-	//Verifica se cada numero é menor do que a raiz da min_heap, se for, massa achei o dormintório, se não
-	//Extrai a raiz e faz de novo
-	//Pesquisar como implementar min_heap no c++
-
+	int dormNumber=1;
 	for(int c1=0; c1<m; c1++){
+		long long b;
+		cin>>b;
 
+		bool sair=false;
+		while(!sair){
+			if(b<=min_heap.top().getValAlt()){
+				cout<<dormNumber<<" "<<min_heap.top().getValOri()-(min_heap.top().getValAlt()-b)<<endl;
+				sair=true;
+			}
+			else{
+				min_heap.pop();
+
+				dormNumber++;
+			}
+		}
 	}
 
 	return 0;
