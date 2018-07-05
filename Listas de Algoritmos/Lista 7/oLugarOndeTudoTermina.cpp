@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#define INF 1000000;
+
 struct Celula{
     int pont;
     bool calculado;
@@ -19,7 +21,9 @@ int backtracking(int I, int J, int K){
         return cubo[Fi][Fj][Fk].pont;
     }
 
-    int pont1=0, pont2=0, pont3=0;
+    int pont1=-INF;
+    int pont2=-INF;
+    int pont3=-INF;
 
     if(I-1>=0){
         pont1=backtracking(I-1, J, K);
